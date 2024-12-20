@@ -72,3 +72,11 @@ button {
    button:active {
     --border-width: 5px;
    }
+
+   /* Reduce margin for smaller viewports */
+   @media(max-width: 500px) {
+    body {
+        margin: 20px;
+        gap: 20px;
+    }
+   }

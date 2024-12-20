@@ -18,6 +18,7 @@ const FETCH_ERROR = "Error fetching activity, please try again later.";
 // Performs an HTTP GET request from the Bored API and returns a JSON object or null
 async function fetchActivity() {
     const response = await fetch(BASE_URI + END_POINTS.DEFAULT, { mode: "no-cors" });
+    console.log(response.ok);
     if (!response.ok) {
         return null;
     }
@@ -27,6 +28,7 @@ async function fetchActivity() {
 // Updates the suggested activity after peforming a GET request
 async function updateActivity() {
     const response = await fetchActivity();
+    console.log(response);
     if (response == null) {
         activity.innerHTML = FETCH_ERROR;
     } else {
